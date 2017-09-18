@@ -10,7 +10,7 @@ var bio = {
   },
   "welcomeMessage": "Hola, soy un super desarrollador",
   "skills": ["JS", "RoR", "Testing"],
-  "biopic": ""
+  "biopic": "https://avatars1.githubusercontent.com/u/1188909?v=4&s=460"
 }
 
 var education = {
@@ -95,3 +95,17 @@ $("#header ul#topContacts").append(email);
 $("#header ul#topContacts").append(twitter);
 $("#header ul#topContacts").append(github);
 $("#header ul#topContacts").append(locationText);
+
+var bioPic = HTMLbioPic.replace("%data%", bio.biopic)
+var welcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage)
+
+$("#header").append(bioPic);
+$("#header").append(welcomeMessage);
+
+if (bio.skills.length > 0) {
+  $("#header").append(HTMLskillsStart);
+  for (index in bio.skills) {
+    var tmpSkill = HTMLskills.replace("%data%", bio.skills[index])
+    $("#header #skills").append(tmpSkill);
+  }
+}
