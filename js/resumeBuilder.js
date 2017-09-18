@@ -1,6 +1,3 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
 var bio = {
   "name" : "Wenceslao Paez",
   "role" : "Software Developer",
@@ -81,4 +78,10 @@ var projects = {
 
 }
 
-console.log(work);
+var headerName = HTMLheaderName.replace("%data%", bio.name);
+var headerRole = HTMLheaderRole.replace("%data%", bio.role);
+
+$("#header").append(headerName);
+$("#header").append(headerRole);
+
+
