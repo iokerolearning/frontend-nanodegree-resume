@@ -4,9 +4,9 @@ var bio = {
   "contacts" : {
     "mobile": "983437401",
     "email": "wcpaez@gmail.com",
-    "github": "https://github.com/wcpaez",
-    "twitter": "",
-    "location": "Huancayo",
+    "github": "wcpaez",
+    "twitter": "wcpaez",
+    "location": "Huancayo"
   },
   "welcomeMessage": "Hola, soy un super desarrollador",
   "skills": ["JS", "RoR", "Testing"],
@@ -81,7 +81,17 @@ var projects = {
 var headerName = HTMLheaderName.replace("%data%", bio.name);
 var headerRole = HTMLheaderRole.replace("%data%", bio.role);
 
-$("#header").append(headerName);
-$("#header").append(headerRole);
+$("#header").prepend(headerRole);
+$("#header").prepend(headerName);
 
+var mobile = HTMLmobile.replace("%data%", bio.contacts.mobile)
+var email = HTMLemail.replace("%data%", bio.contacts.email)
+var twitter = HTMLtwitter.replace("%data%", bio.contacts.twitter)
+var github = HTMLgithub.replace("%data%", bio.contacts.github)
+var locationText = HTMLlocation.replace("%data%", bio.contacts.location)
 
+$("#header ul#topContacts").append(mobile);
+$("#header ul#topContacts").append(email);
+$("#header ul#topContacts").append(twitter);
+$("#header ul#topContacts").append(github);
+$("#header ul#topContacts").append(locationText);
