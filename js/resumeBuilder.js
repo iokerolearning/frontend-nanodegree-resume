@@ -109,3 +109,19 @@ if (bio.skills.length > 0) {
     $("#header #skills").append(tmpSkill);
   }
 }
+
+function renderWork() {
+  for (job in work.jobs) {
+    $("#workExperience").append(HTMLworkStart)
+    var employer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer)
+    var title = HTMLworkTitle.replace("%data%", work.jobs[job].title)
+    var employerTitle = employer + title
+    $(".work-entry:last").append(employerTitle)
+    var dates = HTMLworkDates.replace("%data%", work.jobs[job].dates)
+    var description = HTMLworkDescription.replace("%data%", work.jobs[job].description)
+    $(".work-entry:last").append(dates)
+    $(".work-entry:last").append(description)
+  }
+}
+
+renderWork()
